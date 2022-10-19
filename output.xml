@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20221019 13:38:02.751" rpa="false" schemaversion="3">
+<suite id="s1" name="Sauce demo" source="C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo">
+<suite id="s1-s1" name="Tests" source="C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Tests">
+<suite id="s1-s1-s1" name="Products list tests" source="C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Tests\Products_list_tests.robot">
+<test id="s1-s1-s1-t1" name="Added product and check the shopping cart badget" line="15">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221019 13:38:02.925" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20221019 13:38:02.925" endtime="20221019 13:38:04.439"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221019 13:38:04.440" endtime="20221019 13:38:04.564"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:02.925" endtime="20221019 13:38:04.564"/>
+</kw>
+<kw name="Given Log in using properly account" library="Sauce_demo_app">
+<kw name="Fill in login input" library="LoginPage">
+<arg>standard_user</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN_INPUT}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:04.566" level="INFO">Typing text 'standard_user' into text field 'css:input[id='user-name']'.</msg>
+<status status="PASS" starttime="20221019 13:38:04.566" endtime="20221019 13:38:04.660"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.566" endtime="20221019 13:38:04.661"/>
+</kw>
+<kw name="Fill in password input" library="LoginPage">
+<kw name="Get File" library="OperatingSystem">
+<var>${json}</var>
+<arg>Credencials.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20221019 13:38:04.661" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Credencials.json"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Credencials.json&lt;/a&gt;'.</msg>
+<msg timestamp="20221019 13:38:04.661" level="INFO">${json} = {
+    "password": "secret_sauce"
+}</msg>
+<status status="PASS" starttime="20221019 13:38:04.661" endtime="20221019 13:38:04.661"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${object}</var>
+<arg>json.loads('''${json}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221019 13:38:04.662" level="INFO">${object} = {'password': 'secret_sauce'}</msg>
+<status status="PASS" starttime="20221019 13:38:04.662" endtime="20221019 13:38:04.662"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${object["password"]}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:04.662" level="INFO">Typing password into text field 'css:input[id='password']'.</msg>
+<msg timestamp="20221019 13:38:04.693" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221019 13:38:04.732" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221019 13:38:04.662" endtime="20221019 13:38:04.732"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.661" endtime="20221019 13:38:04.732"/>
+</kw>
+<kw name="Click login button" library="LoginPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:04.733" level="INFO">Clicking button 'css:input[id='login-button']'.</msg>
+<status status="PASS" starttime="20221019 13:38:04.732" endtime="20221019 13:38:04.831"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.732" endtime="20221019 13:38:04.831"/>
+</kw>
+<kw name="Wait for products list page" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PRODUCTS_LIST_PAGE_HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221019 13:38:04.831" endtime="20221019 13:38:04.888"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.831" endtime="20221019 13:38:04.888"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.565" endtime="20221019 13:38:04.888"/>
+</kw>
+<kw name="When Addeed first product from products list" library="Sauce_demo_app">
+<kw name="Wait for products list page" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PRODUCTS_LIST_PAGE_HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221019 13:38:04.889" endtime="20221019 13:38:04.906"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.889" endtime="20221019 13:38:04.906"/>
+</kw>
+<kw name="Choose field in dropdown" library="ProductsListPage">
+<arg>az</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${dropdown_filter_selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221019 13:38:04.906" endtime="20221019 13:38:04.936"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${dropdown_filter_selector}</arg>
+<arg>${filter}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221019 13:38:04.937" level="INFO">Selecting options from selection list 'css:select[class='product_sort_container']' by value az.</msg>
+<status status="PASS" starttime="20221019 13:38:04.936" endtime="20221019 13:38:04.972"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.906" endtime="20221019 13:38:04.972"/>
+</kw>
+<kw name="Click on Add To Cart/Remove button" library="ProductsListPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${first_product_add_to_cart}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221019 13:38:04.972" endtime="20221019 13:38:04.998"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${first_product_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:04.999" level="INFO">Clicking button 'xpath://*[@id="inventory_container"]/div/div[1]/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20221019 13:38:04.999" endtime="20221019 13:38:05.040"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.972" endtime="20221019 13:38:05.041"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:04.889" endtime="20221019 13:38:05.041"/>
+</kw>
+<kw name="Then The value in shopping cart badget should be 1" library="Sauce_demo_app">
+<kw name="Get amount from shopping cart badget" library="ProductsListPage">
+<var>${value}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${shoping_cart_ammount}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221019 13:38:05.042" endtime="20221019 13:38:05.057"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${value}</var>
+<arg>${shoping_cart_ammount}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:05.071" level="INFO">${value} = 1</msg>
+<status status="PASS" starttime="20221019 13:38:05.057" endtime="20221019 13:38:05.071"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" starttime="20221019 13:38:05.071" endtime="20221019 13:38:05.071"/>
+</return>
+<msg timestamp="20221019 13:38:05.072" level="INFO">${value} = 1</msg>
+<status status="PASS" starttime="20221019 13:38:05.041" endtime="20221019 13:38:05.072"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${value}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20221019 13:38:05.072" endtime="20221019 13:38:05.072"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:05.041" endtime="20221019 13:38:05.072"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221019 13:38:05.073" endtime="20221019 13:38:07.203"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:05.072" endtime="20221019 13:38:07.203"/>
+</kw>
+<tag>Shopping_cart_badget</tag>
+<status status="PASS" starttime="20221019 13:38:02.924" endtime="20221019 13:38:07.204"/>
+</test>
+<test id="s1-s1-s1-t2" name="Removed product and checck the shopping cart badget" line="21">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20221019 13:38:07.207" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20221019 13:38:07.207" endtime="20221019 13:38:08.602"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20221019 13:38:08.602" endtime="20221019 13:38:08.722"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:07.206" endtime="20221019 13:38:08.722"/>
+</kw>
+<kw name="Given Log in using properly account" library="Sauce_demo_app">
+<kw name="Fill in login input" library="LoginPage">
+<arg>standard_user</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${LOGIN_INPUT}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:08.724" level="INFO">Typing text 'standard_user' into text field 'css:input[id='user-name']'.</msg>
+<status status="PASS" starttime="20221019 13:38:08.724" endtime="20221019 13:38:08.832"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:08.724" endtime="20221019 13:38:08.833"/>
+</kw>
+<kw name="Fill in password input" library="LoginPage">
+<kw name="Get File" library="OperatingSystem">
+<var>${json}</var>
+<arg>Credencials.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20221019 13:38:08.833" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Credencials.json"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Credencials.json&lt;/a&gt;'.</msg>
+<msg timestamp="20221019 13:38:08.833" level="INFO">${json} = {
+    "password": "secret_sauce"
+}</msg>
+<status status="PASS" starttime="20221019 13:38:08.833" endtime="20221019 13:38:08.833"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${object}</var>
+<arg>json.loads('''${json}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221019 13:38:08.833" level="INFO">${object} = {'password': 'secret_sauce'}</msg>
+<status status="PASS" starttime="20221019 13:38:08.833" endtime="20221019 13:38:08.834"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>${PASSWORD_INPUT}</arg>
+<arg>${object["password"]}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:08.834" level="INFO">Typing password into text field 'css:input[id='password']'.</msg>
+<msg timestamp="20221019 13:38:08.867" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20221019 13:38:08.908" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20221019 13:38:08.834" endtime="20221019 13:38:08.908"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:08.833" endtime="20221019 13:38:08.909"/>
+</kw>
+<kw name="Click login button" library="LoginPage">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:08.909" level="INFO">Clicking button 'css:input[id='login-button']'.</msg>
+<status status="PASS" starttime="20221019 13:38:08.909" endtime="20221019 13:38:09.008"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:08.909" endtime="20221019 13:38:09.008"/>
+</kw>
+<kw name="Wait for products list page" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PRODUCTS_LIST_PAGE_HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221019 13:38:09.009" endtime="20221019 13:38:09.074"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.009" endtime="20221019 13:38:09.074"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:08.723" endtime="20221019 13:38:09.074"/>
+</kw>
+<kw name="And Addeed first product from products list" library="Sauce_demo_app">
+<kw name="Wait for products list page" library="LoginPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${PRODUCTS_LIST_PAGE_HEADER}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221019 13:38:09.075" endtime="20221019 13:38:09.093"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.075" endtime="20221019 13:38:09.094"/>
+</kw>
+<kw name="Choose field in dropdown" library="ProductsListPage">
+<arg>az</arg>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${dropdown_filter_selector}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221019 13:38:09.094" endtime="20221019 13:38:09.125"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>${dropdown_filter_selector}</arg>
+<arg>${filter}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20221019 13:38:09.125" level="INFO">Selecting options from selection list 'css:select[class='product_sort_container']' by value az.</msg>
+<status status="PASS" starttime="20221019 13:38:09.125" endtime="20221019 13:38:09.163"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.094" endtime="20221019 13:38:09.163"/>
+</kw>
+<kw name="Click on Add To Cart/Remove button" library="ProductsListPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${first_product_add_to_cart}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221019 13:38:09.163" endtime="20221019 13:38:09.186"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${first_product_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:09.187" level="INFO">Clicking button 'xpath://*[@id="inventory_container"]/div/div[1]/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20221019 13:38:09.186" endtime="20221019 13:38:09.222"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.163" endtime="20221019 13:38:09.222"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.075" endtime="20221019 13:38:09.222"/>
+</kw>
+<kw name="And The value in shopping cart badget should be 1" library="Sauce_demo_app">
+<kw name="Get amount from shopping cart badget" library="ProductsListPage">
+<var>${value}</var>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${shoping_cart_ammount}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20221019 13:38:09.223" endtime="20221019 13:38:09.238"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${value}</var>
+<arg>${shoping_cart_ammount}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:09.252" level="INFO">${value} = 1</msg>
+<status status="PASS" starttime="20221019 13:38:09.238" endtime="20221019 13:38:09.252"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" starttime="20221019 13:38:09.252" endtime="20221019 13:38:09.252"/>
+</return>
+<msg timestamp="20221019 13:38:09.253" level="INFO">${value} = 1</msg>
+<status status="PASS" starttime="20221019 13:38:09.223" endtime="20221019 13:38:09.253"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${value}</arg>
+<arg>1</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20221019 13:38:09.253" endtime="20221019 13:38:09.253"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.222" endtime="20221019 13:38:09.253"/>
+</kw>
+<kw name="When Click on Add To Cart/Remove button" library="ProductsListPage">
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${first_product_add_to_cart}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20221019 13:38:09.254" endtime="20221019 13:38:09.273"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>${first_product_add_to_cart}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20221019 13:38:09.273" level="INFO">Clicking button 'xpath://*[@id="inventory_container"]/div/div[1]/div[2]/div[2]/button'.</msg>
+<status status="PASS" starttime="20221019 13:38:09.273" endtime="20221019 13:38:09.311"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.253" endtime="20221019 13:38:09.311"/>
+</kw>
+<kw name="Then ProductsListPage.Value is not visible" library="ProductsListPage">
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${shoping_cart_ammount}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20221019 13:38:09.313" endtime="20221019 13:38:09.319"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.312" endtime="20221019 13:38:09.319"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20221019 13:38:09.320" endtime="20221019 13:38:11.435"/>
+</kw>
+<status status="PASS" starttime="20221019 13:38:09.319" endtime="20221019 13:38:11.435"/>
+</kw>
+<tag>Shopping_cart_badget</tag>
+<status status="PASS" starttime="20221019 13:38:07.206" endtime="20221019 13:38:11.436"/>
+</test>
+<status status="PASS" starttime="20221019 13:38:02.772" endtime="20221019 13:38:11.441"/>
+</suite>
+<status status="PASS" starttime="20221019 13:38:02.769" endtime="20221019 13:38:11.443"/>
+</suite>
+<status status="PASS" starttime="20221019 13:38:02.753" endtime="20221019 13:38:11.447"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Shopping_cart_badget</stat>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Sauce demo">Sauce demo</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Tests">Sauce demo.Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Products list tests">Sauce demo.Tests.Products list tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

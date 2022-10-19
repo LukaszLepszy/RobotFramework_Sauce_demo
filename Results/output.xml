@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.7 on win32)" generated="20220922 11:57:04.895" rpa="false" schemaversion="3">
+<suite id="s1" name="Tests" source="C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Tests">
+<suite id="s1-s1" name="Checkout tests" source="C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Tests\Checkout_tests.robot">
+<test id="s1-s1-t1" name="My Test 1" line="42">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220922 11:57:05.067" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20220922 11:57:05.067" endtime="20220922 11:57:06.847"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220922 11:57:06.847" endtime="20220922 11:57:06.975"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:05.066" endtime="20220922 11:57:06.975"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${my_var}</var>
+<arg>def</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220922 11:57:06.977" level="INFO">${my_var} = def</msg>
+<status status="PASS" starttime="20220922 11:57:06.976" endtime="20220922 11:57:06.977"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${MY_VAR}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220922 11:57:06.978" level="INFO">def</msg>
+<status status="PASS" starttime="20220922 11:57:06.977" endtime="20220922 11:57:06.978"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220922 11:57:06.979" endtime="20220922 11:57:09.077"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:06.979" endtime="20220922 11:57:09.077"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:05.066" endtime="20220922 11:57:09.077"/>
+</test>
+<test id="s1-s1-t2" name="My Test 2" line="45">
+<kw name="Begin Web Test" library="Common" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220922 11:57:09.080" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20220922 11:57:09.080" endtime="20220922 11:57:10.505"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220922 11:57:10.505" endtime="20220922 11:57:10.623"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:09.079" endtime="20220922 11:57:10.623"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${my_Var}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220922 11:57:10.624" level="INFO">DDDD</msg>
+<status status="PASS" starttime="20220922 11:57:10.624" endtime="20220922 11:57:10.624"/>
+</kw>
+<kw name="End Web Test" library="Common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20220922 11:57:10.625" endtime="20220922 11:57:12.715"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:10.625" endtime="20220922 11:57:12.715"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:09.079" endtime="20220922 11:57:12.716"/>
+</test>
+<status status="PASS" starttime="20220922 11:57:04.912" endtime="20220922 11:57:12.717"/>
+</suite>
+<suite id="s1-s2" name="Operating System" source="C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Tests\Operating_System.robot">
+<test id="s1-s2-t1" name="Create Some Directories" line="9">
+<kw name="Create the Base Directory" library="OS">
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${output_directory}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20220922 11:57:12.729" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.729" endtime="20220922 11:57:12.729"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${output_directory}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.730" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.730" endtime="20220922 11:57:12.730"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:12.729" endtime="20220922 11:57:12.730"/>
+</kw>
+<kw name="Create Directory 1" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${directory_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20220922 11:57:12.731" level="INFO">${directory_path} = Outputs\first directory</msg>
+<status status="PASS" starttime="20220922 11:57:12.731" endtime="20220922 11:57:12.731"/>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${directory_path}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20220922 11:57:12.731" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.731" endtime="20220922 11:57:12.731"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${directory_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.731" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.731" endtime="20220922 11:57:12.732"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:12.730" endtime="20220922 11:57:12.732"/>
+</kw>
+<kw name="Create Directory 2" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${directory_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20220922 11:57:12.732" level="INFO">${directory_path} = Outputs\second directory</msg>
+<status status="PASS" starttime="20220922 11:57:12.732" endtime="20220922 11:57:12.732"/>
+</kw>
+<kw name="Create Directory" library="OperatingSystem">
+<arg>${directory_path}</arg>
+<doc>Creates the specified directory.</doc>
+<msg timestamp="20220922 11:57:12.733" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory&lt;/a&gt;' already exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.732" endtime="20220922 11:57:12.733"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${directory_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.733" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.733" endtime="20220922 11:57:12.733"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:12.732" endtime="20220922 11:57:12.733"/>
+</kw>
+<tag>OperatingSystem</tag>
+<status status="PASS" starttime="20220922 11:57:12.728" endtime="20220922 11:57:12.733"/>
+</test>
+<test id="s1-s2-t2" name="Create Some Files" line="15">
+<kw name="Create the First File" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${file_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<arg>${file_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20220922 11:57:12.735" level="INFO">${file_path} = Outputs\first directory\firs file.txt</msg>
+<status status="PASS" starttime="20220922 11:57:12.735" endtime="20220922 11:57:12.735"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>This is text in file 1</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220922 11:57:12.736" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220922 11:57:12.735" endtime="20220922 11:57:12.736"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${file_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.736" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.736" endtime="20220922 11:57:12.736"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:12.735" endtime="20220922 11:57:12.737"/>
+</kw>
+<kw name="Create the Second File" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${file_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_2}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20220922 11:57:12.737" level="INFO">${file_path} = Outputs\second directory\second file.txt</msg>
+<status status="PASS" starttime="20220922 11:57:12.737" endtime="20220922 11:57:12.737"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>This is text in file 2</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220922 11:57:12.738" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\second file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\second file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220922 11:57:12.737" endtime="20220922 11:57:12.738"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${file_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.738" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\second file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\second file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.738" endtime="20220922 11:57:12.738"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:12.737" endtime="20220922 11:57:12.738"/>
+</kw>
+<tag>OperatingSystem</tag>
+<status status="PASS" starttime="20220922 11:57:12.734" endtime="20220922 11:57:12.739"/>
+</test>
+<test id="s1-s2-t3" name="Move file" line="20">
+<kw name="Create the First File" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${file_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<arg>${file_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20220922 11:57:12.741" level="INFO">${file_path} = Outputs\first directory\firs file.txt</msg>
+<status status="PASS" starttime="20220922 11:57:12.740" endtime="20220922 11:57:12.741"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>This is text in file 1</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220922 11:57:12.741" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220922 11:57:12.741" endtime="20220922 11:57:12.741"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${file_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.742" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.742" endtime="20220922 11:57:12.742"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:12.740" endtime="20220922 11:57:12.742"/>
+</kw>
+<kw name="Create the Second File" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${file_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_2}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20220922 11:57:12.743" level="INFO">${file_path} = Outputs\second directory\second file.txt</msg>
+<status status="PASS" starttime="20220922 11:57:12.742" endtime="20220922 11:57:12.743"/>
+</kw>
+<kw name="Create File" library="OperatingSystem">
+<arg>${file_path}</arg>
+<arg>This is text in file 2</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<msg timestamp="20220922 11:57:12.743" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\second file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\second file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220922 11:57:12.743" endtime="20220922 11:57:12.743"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${file_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.744" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\second file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\second file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.743" endtime="20220922 11:57:12.744"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:12.742" endtime="20220922 11:57:12.744"/>
+</kw>
+<kw name="Move File 1 from Durectory 1 to Directory 2" library="OS">
+<kw name="Join Path" library="OperatingSystem">
+<var>${source_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_1}</arg>
+<arg>${file_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20220922 11:57:12.745" level="INFO">${source_path} = Outputs\first directory\firs file.txt</msg>
+<status status="PASS" starttime="20220922 11:57:12.744" endtime="20220922 11:57:12.745"/>
+</kw>
+<kw name="Join Path" library="OperatingSystem">
+<var>${target_path}</var>
+<arg>${output_directory}</arg>
+<arg>${directory_2}</arg>
+<arg>${file_1}</arg>
+<doc>Joins the given path part(s) to the given base path.</doc>
+<msg timestamp="20220922 11:57:12.745" level="INFO">${target_path} = Outputs\second directory\firs file.txt</msg>
+<status status="PASS" starttime="20220922 11:57:12.745" endtime="20220922 11:57:12.745"/>
+</kw>
+<kw name="Move File" library="OperatingSystem">
+<arg>${source_path}</arg>
+<arg>${target_path}</arg>
+<doc>Moves the source file into the destination.</doc>
+<msg timestamp="20220922 11:57:12.747" level="INFO" html="true">Moved file from '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt&lt;/a&gt;' to '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\firs file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\firs file.txt&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220922 11:57:12.745" endtime="20220922 11:57:12.747"/>
+</kw>
+<kw name="Should Exist" library="OperatingSystem">
+<arg>${target_path}</arg>
+<doc>Fails unless the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.748" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\firs file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\second directory\firs file.txt&lt;/a&gt;' exists.</msg>
+<status status="PASS" starttime="20220922 11:57:12.747" endtime="20220922 11:57:12.748"/>
+</kw>
+<kw name="Should Not Exist" library="OperatingSystem">
+<arg>${source_path}</arg>
+<doc>Fails if the given path (file or directory) exists.</doc>
+<msg timestamp="20220922 11:57:12.748" level="INFO" html="true">Path '&lt;a href="file://C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt"&gt;C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Outputs\first directory\firs file.txt&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20220922 11:57:12.748" endtime="20220922 11:57:12.748"/>
+</kw>
+<status status="PASS" starttime="20220922 11:57:12.744" endtime="20220922 11:57:12.748"/>
+</kw>
+<tag>OperatingSystem</tag>
+<status status="PASS" starttime="20220922 11:57:12.740" endtime="20220922 11:57:12.749"/>
+</test>
+<doc>These are some file and directory tests</doc>
+<status status="PASS" starttime="20220922 11:57:12.718" endtime="20220922 11:57:12.750"/>
+</suite>
+<status status="PASS" starttime="20220922 11:57:04.897" endtime="20220922 11:57:12.751"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">OperatingSystem</stat>
+</tag>
+<suite>
+<stat pass="5" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Checkout tests">Tests.Checkout tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s2" name="Operating System">Tests.Operating System</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220922 11:57:05.059" level="ERROR">Error in file 'C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Resources\PO\ProductsPage.robot' on line 4: Importing library 'Colletions' failed: ModuleNotFoundError: No module named 'Colletions'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
+<msg timestamp="20220922 11:57:05.063" level="ERROR">Error in file 'C:\Users\Lukasz_Lepszy\PycharmProjects\Sauce_demo\Resources\PO\CheckoutPage.robot' on line 4: Importing library 'Colletions' failed: ModuleNotFoundError: No module named 'Colletions'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\Scripts\robot.exe
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\python310.zip
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\DLLs
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\lib
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310
+  C:\Users\Lukasz_Lepszy\AppData\Local\Programs\Python\Python310\lib\site-packages</msg>
+</errors>
+</robot>
